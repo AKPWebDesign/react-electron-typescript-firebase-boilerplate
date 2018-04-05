@@ -16,8 +16,9 @@ available in that folder to test and/or deploy the app.
 
 *Note: At some point, you'll likely need to set up the app for Firebase.*
 Most of the configuration for this has been done, but you'll still need to associate
-the app with your Firebase project. See https://firebase.google.com/docs/hosting/quickstart
-for more information.
+the app with your Firebase project. You can accomplish this by running the command
+`firebase use <project-id>`, after installing `firebase-tools` and logging in. 
+See https://firebase.google.com/docs/hosting/quickstart for more information.
 
 ## Folder Overview
 
