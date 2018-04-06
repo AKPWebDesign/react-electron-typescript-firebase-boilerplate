@@ -40,6 +40,7 @@ other folders. Feel free to look at the `package.json` files in each folder to s
 how this has been configured.
 
 #### General
+`yarn setup`: Installs all dependencies in each folder.  
 `yarn start`: Starts the React packager with Webpack hot reload enabled for development.  
 `yarn start:electron`: Same as above, additionally opening the Electron wrapper in development mode.  
 `yarn start:prebuilt`: Builds the app for deployment and begins serving it on localhost:3000 statically.  
