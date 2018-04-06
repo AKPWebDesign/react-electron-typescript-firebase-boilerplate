@@ -1,7 +1,7 @@
 {
   "name": "electron-wrapper",
   "productName": "ReactTypescriptBoilerplateExample",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Just a simple electron wrapper for my boilerplate.",
   "main": "src/index.ts",
   "scripts": {
@@ -61,7 +61,7 @@
       },
       "windowsStoreConfig": {
         "packageName": "",
-        "name": "electronwrappertemp"
+        "name": "react-electron-typescript-firebase-boilerplate"
       }
     }
   },

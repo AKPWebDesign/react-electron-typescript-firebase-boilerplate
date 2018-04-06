@@ -18,6 +18,7 @@ if (!isDev) {
   const server = 'https://nuts-react-electron-typescript.herokuapp.com';
   const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
   autoUpdater.setFeedURL(feed);
+  autoUpdater.checkForUpdates();
 
   setInterval(() => {
     autoUpdater.checkForUpdates();
