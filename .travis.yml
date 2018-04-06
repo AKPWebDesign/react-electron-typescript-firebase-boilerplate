@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "lts/*"
+  - "node"
+cache: yarn
+script:
+  - yarn test
+  - yarn deploy
+os:
+  - linux
+  - osx
+# Only build tags. TODO: make test and deploy different jobs so test can always run
+if: tag IS present
