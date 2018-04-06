@@ -1,6 +1,6 @@
 {
   "name": "react-electron-typescript-firebase-boilerplate",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "license": "MIT",
   "author": "Austin Peterson <austin@akpwebdesign.com> (https://blog.akpwebdesign.com)",
@@ -40,7 +40,8 @@
     "deploy": "yarn build && firebase deploy",
     "deploy:web": "yarn build && firebase deploy --only hosting",
     "deploy:functions": "yarn build && firebase deploy --only functions",
-    "deploy:electron": "cd electron-wrapper && yarn deploy"
+    "deploy:electron": "cd electron-wrapper && yarn deploy",
+    "deploy:ci": "yarn build && firebase deploy --token \"$FIREBASE_TOKEN\" && --project react-electron-firebase && yarn deploy:electron"
   },
   "devDependencies": {
     "firebase-tools": "^3.18.1"

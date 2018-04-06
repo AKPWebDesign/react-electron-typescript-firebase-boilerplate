@@ -5,7 +5,7 @@ cache: yarn
 script:
   - yarn setup
   - yarn test
-  - yarn deploy
+  - yarn deploy:ci
 os:
   - linux
   - osx
