@@ -53,8 +53,8 @@ class CounterComponent extends React.Component<ICounterProps, any> {
           <input type="number" value={this.state.inputVal} onChange={this.handleValueChange} />
         </p>
         <p>
-          <button onClick={this.add}>Add {this.state.inputVal} to counter</button>&nbsp;
-          <button onClick={this.sub}>Subtract {this.state.inputVal} from counter</button>
+          <button onClick={this.sub}>- {this.state.inputVal}</button>&nbsp;
+          <button onClick={this.add}>+ {this.state.inputVal}</button>
         </p>
       </div>
     )
