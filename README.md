@@ -45,7 +45,7 @@ how this has been configured.
 `yarn start:prebuilt`: Builds the app for deployment and begins serving it on localhost:3000 statically.  
 `yarn start:prebuilt:electron`: Same as above, additionally opening the Electron wrapper in development mode.  
 `yarn lint`: Lints each subproject.  
-`yarn build`: Compiles all TypeScript in each subproject.  
+`yarn build`: Builds the React app and Cloud Functions.  
 `yarn test`: Runs tests on the React portion of the app.  
 `yarn serve`: Serves the React build folder on localhost:3000.  
 

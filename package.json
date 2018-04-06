@@ -9,9 +9,9 @@
     "start:electron": "yarn react:start:electron",
     "start:prebuilt": "yarn react:start:prebuilt",
     "start:prebuilt:electron": "yarn react:start:prebuilt:electron",
-    "lint": "yarn react:lint && yarn electron:lint && yarn functions:lint",
-    "build": "yarn react:build && yarn functions:build && yarn electron:make",
-    "test": "yarn react:test",
+    "lint": "yarn react:lint && yarn functions:lint",
+    "build": "yarn react:build && yarn functions:build",
+    "test": "yarn react:test && yarn lint",
     "serve": "yarn react:serve",
 
     "react:start": "cd react && yarn start",
