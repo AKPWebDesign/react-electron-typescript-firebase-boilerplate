@@ -7,7 +7,6 @@ script:
   - yarn test
   - yarn deploy:ci
 os:
-  - linux
   - osx
 # Only build tags. TODO: make test and deploy different jobs so test can always run
 if: tag IS present
