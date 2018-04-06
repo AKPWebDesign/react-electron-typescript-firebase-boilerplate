@@ -1,5 +1,5 @@
 {
-  "name": "react-electron-typescript-firebase-boilerplate",
+  "name": "react-boilerplate",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
@@ -53,6 +53,7 @@
     "start:prebuilt": "yarn build && yarn serve",
     "start:prebuilt:electron": "yarn build && concurrently --kill-others --success first -p \"[{name}]\" -n \"WEB,ELECTRON\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn serve\" \"yarn electron:dev\"",
     "build": "node scripts/build.js",
+    "lint": "tslint --project tsconfig.json",
     "test": "node scripts/test.js --env=jsdom",
     "serve": "serve -s build -p 3000",
     "electron": "cd ../electron-wrapper && yarn start",

@@ -1,0 +1,47 @@
+{
+  "name": "react-electron-typescript-firebase-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Austin Peterson <austin@akpwebdesign.com> (https://blog.akpwebdesign.com)",
+  "scripts": {
+    "start": "yarn react:start",
+    "start:electron": "yarn react:start:electron",
+    "start:prebuilt": "yarn react:start:prebuilt",
+    "start:prebuilt:electron": "yarn react:start:prebuilt:electron",
+    "lint": "yarn react:lint && yarn electron:lint && yarn functions:lint",
+    "build": "yarn react:build && yarn functions:build && yarn electron:make",
+    "test": "yarn react:test",
+    "serve": "yarn react:serve",
+
+    "react:start": "cd react && yarn start",
+    "react:start:electron": "cd react && yarn start:electron",
+    "react:start:prebuilt": "cd react && yarn start:prebuilt",
+    "react:start:prebuilt:electron": "cd react && yarn start:prebuilt:electron",
+    "react:lint": "cd react && yarn lint",
+    "react:build": "cd react && yarn build",
+    "react:test": "cd react && yarn test",
+    "react:serve": "cd react && yarn serve",
+
+    "electron:start": "cd electron-wrapper && yarn start",
+    "electron:start:dev": "cd electron-wrapper && yarn start -- -- --dev",
+    "electron:package": "cd electron-wrapper && yarn package",
+    "electron:make": "cd electron-wrapper && yarn make",
+    "electron:lint": "cd electron-wrapper && yarn lint",
+
+    "functions:lint": "cd functions && yarn lint",
+    "functions:build": "cd functions && yarn build",
+    "functions:serve": "cd functions && yarn serve",
+    "functions:shell": "cd functions && yarn shell",
+    "functions:start": "cd functions && yarn start",
+    "functions:logs": "cd functions && yarn logs",
+
+    "deploy": "yarn build && firebase deploy",
+    "deploy:web": "yarn build && firebase deploy --only hosting",
+    "deploy:functions": "yarn build && firebase deploy --only functions",
+    "deploy:electron": "cd electron-wrapper && yarn deploy"
+  },
+  "devDependencies": {
+    "firebase-tools": "^3.18.1"
+  }
+}

@@ -34,19 +34,38 @@ want to start adding new things.
 
 ## Script Overview
 
-For the most part, you'll want to run scripts from within the `react` folder, unless
-you change things significantly. I'll be documenting the scripts using `yarn`, but
-you can also run them with `npm` if you wish. Available scripts:  
+There are helpful aliases for all npm scripts located at the top level of the project,
+for ease of access. Each script alias just calls the proper script from one of the
+other folders. Feel free to look at the `package.json` files in each folder to see
+how this has been configured.
 
+#### General
 `yarn start`: Starts the React packager with Webpack hot reload enabled for development.  
 `yarn start:electron`: Same as above, additionally opening the Electron wrapper in development mode.  
 `yarn start:prebuilt`: Builds the app for deployment and begins serving it on localhost:3000 statically.  
 `yarn start:prebuilt:electron`: Same as above, additionally opening the Electron wrapper in development mode.  
-`yarn build`: Builds the app for deployment.  
-`yarn test`: Runs tests on the app.  
-`yarn serve`: Serves the build folder on localhost:3000.  
-`yarn electron`: Starts the Electron wrapper in production mode.  
-`yarn electron:dev`: Starts the Electron wrapper in development mode.  
+`yarn lint`: Lints each subproject.  
+`yarn build`: Compiles all TypeScript in each subproject.  
+`yarn test`: Runs tests on the React portion of the app.  
+`yarn serve`: Serves the React build folder on localhost:3000.  
+
+#### Electron-specific
+`yarn electron:start`: Starts the Electron wrapper in production mode.  
+`yarn electron:start:dev`: Starts the Electron wrapper in development mode.  
+`yarn electron:package`: Packages the Electron wrapper.  
+`yarn electron:make`: Builds the Electron wrapper into a final executible/installer.  
+`yarn electron:lint`: Lints the Electron wrapper.  
+
+#### Functions-specific
+`yarn functions:lint`: Lints the Firebase Cloud Functions.  
+`yarn functions:build`: Compiles the Firebase Cloud Functions TypeScript.  
+`yarn functions:serve`: Serves the Firebase Cloud Functions locally.  
+`yarn functions:shell`: Runs the Firebase Cloud Functions shell.  
+`yarn functions:start`: Alias for `yarn functions:shell`.  
+`yarn functions:logs`: View the Firebase Cloud Functions logs in your console.
+
+#### Deployment
 `yarn deploy`: Deploys the app and functions to Firebase.  
 `yarn deploy:web`: Deploys only the React app to Firebase.  
 `yarn deploy:functions`: Deploys only the functions to Firebase.  
+`yarn deploy:electron`: Deploys the Electron app to GitHub Releases.  
