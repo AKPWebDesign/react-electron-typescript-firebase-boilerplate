@@ -263,6 +263,20 @@ module.exports = {
       tsconfig: paths.appTsConfig,
       tslint: paths.appTsLint,
     }),
+    // this allows us to use electron functionality
+    new webpack.ExternalsPlugin('commonjs', [
+      'desktop-capturer',
+      'electron',
+      'ipc',
+      'ipc-renderer',
+      'native-image',
+      'remote',
+      'web-frame',
+      'clipboard',
+      'crash-reporter',
+      'screen',
+      'shell'
+    ]),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

@@ -3,7 +3,7 @@
  * either the development or live site within a browser window. Consider it your
  * starting point for adding all sorts of fun electron goodies.
  */
-import { app, autoUpdater, BrowserWindow, dialog } from 'electron';
+import { app, autoUpdater, BrowserWindow, dialog, ipcMain, globalShortcut } from 'electron';
 import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } from 'electron-devtools-installer';
 import * as isDev from 'electron-is-dev';
 import { argv } from 'yargs';
@@ -66,6 +66,22 @@ const createWindow = async () => {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+
+  // sends the current electron version to the web client.
+  ipcMain.on('electron-version', (event: any) => {
+    event.returnValue = process.versions.electron;
+  });
+
+  // initialize global shortcuts
+  globalShortcut.register('CmdOrCtrl+Shift+Plus', () => {
+    mainWindow && mainWindow.webContents.send('accelerator-plus');
+  });
+  globalShortcut.register('CmdOrCtrl+Shift+-', () => {
+    mainWindow && mainWindow.webContents.send('accelerator-minus');
+  });
+  globalShortcut.register('CmdOrCtrl+Shift+R', () => {
+    mainWindow && mainWindow.webContents.send('accelerator-reset');
+  });
 };
 
 // This method will be called when Electron has finished
@@ -88,6 +104,11 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+// unregister all global shortcuts
+app.on('will-quit', () => {
+  globalShortcut.unregisterAll();
 });
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {

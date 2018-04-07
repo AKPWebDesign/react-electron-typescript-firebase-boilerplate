@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Counter from './components/counter';
+import ElectronVersion from './components/electron-version';
 import './App.css';
-
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -16,6 +16,7 @@ class App extends React.Component {
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
         <Counter />
+        <ElectronVersion />
       </div>
     );
   }
