@@ -38,7 +38,10 @@
     "deploy:functions": "yarn build && firebase deploy --only functions",
     "deploy:electron": "cd electron-wrapper && yarn deploy",
     "deploy:ci": "yarn build && firebase deploy --token \"$FIREBASE_TOKEN\" --project react-electron-firebase && yarn deploy:electron",
-    "release": "standard-version"
+    "release": "standard-version",
+    "release:react": "cd react && yarn release",
+    "release:electron": "cd electron-wrapper && yarn release",
+    "release:functions": "cd functions && yarn release"
   },
   "devDependencies": {
     "firebase-tools": "^3.18.1",

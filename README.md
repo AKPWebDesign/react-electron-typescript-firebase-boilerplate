@@ -70,3 +70,10 @@ how this has been configured.
 `yarn deploy:web`: Deploys only the React app to Firebase.  
 `yarn deploy:functions`: Deploys only the functions to Firebase.  
 `yarn deploy:electron`: Deploys the Electron app to GitHub Releases.  
+
+#### Releases
+`yarn release`: Use [standard-version](https://github.com/conventional-changelog/standard-version) to release and tag
+the top-level boilerplate.
+`yarn release:react`: Same as above, but for the React project, skipping git steps.
+`yarn release:electron`: Same as above, but for the Electron project, skipping git steps.
+`yarn release:functions`: Same as above, but for the Cloud Functions project, skipping git steps.

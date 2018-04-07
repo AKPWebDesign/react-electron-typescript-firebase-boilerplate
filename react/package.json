@@ -60,7 +60,8 @@
     "electron:dev": "cd ../electron-wrapper && yarn start -- -- --dev",
     "deploy": "yarn build && firebase deploy",
     "deploy:web": "yarn build && firebase deploy --only hosting",
-    "deploy:functions": "yarn build && firebase deploy --only functions"
+    "deploy:functions": "yarn build && firebase deploy --only functions",
+    "release": "standard-version"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
@@ -71,8 +72,15 @@
     "@types/redux-logger": "^3.0.5",
     "concurrently": "^3.5.1",
     "serve": "^6.5.3",
+    "standard-version": "^4.3.0",
     "tslint-config-prettier": "^1.10.0",
     "typescript": "^2.8.1"
+  },
+  "standard-version": {
+    "skip": {
+      "commit": true,
+      "tag": true
+    }
   },
   "jest": {
     "collectCoverageFrom": [
