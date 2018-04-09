@@ -9,10 +9,10 @@ your boss.
 ## Getting Started
 
 First, you'll need to clone this repo with `git clone https://github.com/AKPWebDesign/react-electron-typescript-firebase-boilerplate.git`.
-Next, navigate to each directory within the repo, running either `yarn` or `npm install`
-to grab all the necessary dependencies. Finally, begin hacking away on your app
-in the `react` folder. Once you're done hacking away, you can run some of the scripts
-available in that folder to test and/or deploy the app.
+Next, run `yarn setup` from the root directory, which installs all required dependencies.
+Finally, begin hacking away on your app in the `react` folder. Once you're done
+hacking away, you can run some of the scripts available in that folder to test 
+and/or deploy the app.
 
 *Note: At some point, you'll likely need to set up the app for Firebase.*
 Most of the configuration for this has been done, but you'll still need to associate
