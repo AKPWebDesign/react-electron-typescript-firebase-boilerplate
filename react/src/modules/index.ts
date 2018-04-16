@@ -1,4 +1,8 @@
 import { combineReducers } from 'redux';
+import {
+  firebaseReducer as firebase,
+  actionTypes as FirebaseActions,
+} from 'react-redux-firebase';
 import example, {
   Actions as ExampleActions,
   ActionCreators as ExampleActionCreators,
@@ -13,6 +17,7 @@ import electron, {
 const reducers = combineReducers({
   example,
   electron,
+  firebase,
 });
 
 export default reducers;
@@ -20,6 +25,7 @@ export default reducers;
 export const Actions = {
   example: ExampleActions,
   electron: ElectronActions,
+  firebase: FirebaseActions,
 };
 
 export const ActionCreators = {
@@ -30,4 +36,5 @@ export const ActionCreators = {
 export interface IState {
   example: IExampleState,
   electron: IElectronState,
+  firebase: any,
 };
