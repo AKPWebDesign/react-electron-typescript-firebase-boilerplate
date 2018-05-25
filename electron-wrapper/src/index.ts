@@ -9,7 +9,7 @@ import * as isDev from 'electron-is-dev';
 import { argv } from 'yargs';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) {
+if (require('electron-squirrel-startup')) { // tslint:disable-line no-var-requires
   app.quit();
 }
 
@@ -37,7 +37,7 @@ const urls = {
 };
 
 if (argv.dev) {
-  require('electron-debug')({
+  require('electron-debug')({ // tslint:disable-line no-var-requires
     showDevTools: 'undocked',
     enabled: true,
   });
@@ -73,6 +73,7 @@ const createWindow = async () => {
   });
 
   // initialize global shortcuts
+  /* tslint:disable no-unused-expression */
   globalShortcut.register('CmdOrCtrl+Shift+Plus', () => {
     mainWindow && mainWindow.webContents.send('accelerator-plus');
   });
@@ -82,6 +83,7 @@ const createWindow = async () => {
   globalShortcut.register('CmdOrCtrl+Shift+R', () => {
     mainWindow && mainWindow.webContents.send('accelerator-reset');
   });
+  /* tslint:enable */
 };
 
 // This method will be called when Electron has finished
@@ -121,7 +123,9 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
   };
 
   dialog.showMessageBox(dialogOpts, (response) => {
-    if (response === 0) autoUpdater.quitAndInstall();
+    if (response === 0) {
+      autoUpdater.quitAndInstall();
+    }
   });
 });
 

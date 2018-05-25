@@ -98,6 +98,7 @@
     "eslint-plugin-react": "^7",
     "standard-version": "^4.3.0",
     "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.8.1"
   }
 }
