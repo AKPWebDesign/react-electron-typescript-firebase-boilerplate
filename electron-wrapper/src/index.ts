@@ -9,7 +9,7 @@ import * as isDev from 'electron-is-dev';
 import { argv } from 'yargs';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) { // tslint:disable-line no-var-requires
+if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
@@ -37,7 +37,7 @@ const urls = {
 };
 
 if (argv.dev) {
-  require('electron-debug')({ // tslint:disable-line no-var-requires
+  require('electron-debug')({
     showDevTools: 'undocked',
     enabled: true,
   });
