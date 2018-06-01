@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Austin Peterson <austin@akpwebdesign.com> (https://blog.akpwebdesign.com)",
   "scripts": {
-    "setup": "cd react && yarn && cd ../functions && yarn && cd ../electron-wrapper && yarn",
+    "setup": "yarn && cd react && yarn && cd ../functions && yarn && cd ../electron-wrapper && yarn",
     "start": "yarn react:start",
     "start:electron": "yarn react:start:electron",
     "start:prebuilt": "yarn react:start:prebuilt",
